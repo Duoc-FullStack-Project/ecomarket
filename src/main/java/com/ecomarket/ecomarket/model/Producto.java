@@ -1,0 +1,30 @@
+package com.ecomarket.ecomarket.model;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.math.BigDecimal;
+
+@Entity
+@Table(name = "PRODUCTO")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Producto {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID_PRODUCTO")
+    private Long idProducto;
+
+    @Column(name = "STOCK", nullable = false)
+    private Integer stock;
+
+    @Column(name = "PRECIO", nullable = false, precision = 12, scale = 2)
+    private BigDecimal precio;
+
+    @Column(name = "NOMBRE_PRODUCTO", nullable = false, length = 200)
+    private String nombreProducto;
+}
