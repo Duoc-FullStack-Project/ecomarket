@@ -1,5 +1,7 @@
 package com.ecomarket.ecomarket.model;
 
+import java.math.BigInteger;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,7 +17,7 @@ public class Comuna {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_COMUNA")
-    private Long idComuna;
+    private Integer idComuna;
 
     @Column(name = "NOMBRE_COMUNA", nullable = false, length = 100)
     private String nombreComuna;

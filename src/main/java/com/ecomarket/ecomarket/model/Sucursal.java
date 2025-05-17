@@ -15,7 +15,7 @@ public class Sucursal {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_SUCURSAL")
-    private Long idSucursal;
+    private Integer idSucursal;
 
     @Column(name = "DIR_SUCURSAL", nullable = false, length = 200)
     private String direccionSucursal;

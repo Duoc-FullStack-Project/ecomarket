@@ -8,9 +8,10 @@ import com.ecomarket.ecomarket.model.Producto;
 
 @Repository
 public interface ProductoRepository extends JpaRepository<Producto, Long> {
-    List<Producto> findByNombreProductoContainingIgnoreCase(String nombre);
 
-    List<Producto> findByPrecioBetween(BigDecimal precioMin, BigDecimal precioMax);
+    List<Producto> findByStock(int stock);
 
-    List<Producto> findByStockGreaterThan(Integer stock);
+    List<Producto> findByPrecio(BigDecimal precio);
+
+    List<Producto> findByNombreProducto(String nombreProducto);
 }

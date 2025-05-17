@@ -9,9 +9,13 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ClienteRepository extends JpaRepository<Cliente, String> {
-    List<Cliente> findByApellidosContainingIgnoreCase(String apellidos);
+
+    List<Cliente> findByRunContainingIgnoreCase(String run);
+
+    Optional<Cliente> findByRunAndDv(String run, String dv);
 
     List<Cliente> findByNombresContainingIgnoreCase(String nombres);
 
-    Optional<Cliente> findByRunAndDv(String run, String dv);
+    List<Cliente> findByApellidosContainingIgnoreCase(String apellidos);
+
 }
