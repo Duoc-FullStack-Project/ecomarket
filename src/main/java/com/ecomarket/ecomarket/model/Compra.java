@@ -1,34 +1,14 @@
-/**
- * Clase modelo que representa una compra en el sistema EcoMarket.
- * 
- * <p>Esta clase encapsula toda la información relacionada con una transacción de compra
- * realizada por un usuario en la plataforma EcoMarket. Almacena datos como el usuario
- * que realizó la compra, los productos adquiridos, la fecha de la transacción, el método
- * de pago utilizado, el total de la compra, entre otros detalles relevantes.</p>
- * 
- * <p>La clase Compra forma parte del modelo de datos central del sistema EcoMarket y se
- * utiliza para gestionar el historial de compras, generar reportes de ventas, procesar
- * devoluciones y mantener un registro de todas las transacciones comerciales.</p>
- * 
- * <p>Esta entidad establece relaciones con otras clases del modelo como Usuario, Producto,
- * MetodoPago, etc., para formar un modelo de datos cohesivo para la plataforma de comercio
- * electrónico orientada a productos ecológicos.</p>
- * 
- * @author Axel
- * @version 1.0
- */
+
 package com.ecomarket.ecomarket.model;
 
 import jakarta.persistence.*;
+import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
+import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.ecomarket.ecomarket.model.Detalle;
 
 @Entity
 @Table(name = "COMPRA")
@@ -43,7 +23,7 @@ public class Compra {
     private Long idCompra;
 
     @Column(name = "FECHA_COMPRA", nullable = false)
-    private LocalDate fechaCompra;
+    private Date fechaCompra;
 
     @Column(name = "NRO_FACTURA", nullable = false, length = 50)
     private String numeroFactura;
